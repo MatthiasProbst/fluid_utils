@@ -7,7 +7,7 @@ import numpy as np
 import scipy.interpolate as interp
 import scipy.ndimage.filters as filt
 
-from .image import loadimg
+from .image import load_img
 
 _formatter = logging.Formatter(
     '%(asctime)s,%(msecs)d %(levelname)-8s [%(filename)s:%(lineno)d] %(message)s',
@@ -146,11 +146,11 @@ def correlation_stats(frame_a: np.ndarray, frame_b: np.ndarray,
     """
 
     if isinstance(frame_a, (str, pathlib.Path)):
-        frame_a = loadimg(frame_a)
+        frame_a = load_img(frame_a)
     else:
         frame_a = np.asarray(frame_a)
     if isinstance(frame_b, (str, pathlib.Path)):
-        frame_b = loadimg(frame_b)
+        frame_b = load_img(frame_b)
     else:
         frame_b = np.asarray(frame_b)
 
