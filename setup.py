@@ -1,7 +1,8 @@
 import setuptools
 
+from pivparticledensity._version import __version__
 name = 'fluid_utils'
-__version__ = '0.0.0'  # version is MAJOR.MINOR.PATCH
+__version__ = __version__  # version is MAJOR.MINOR.PATCH
 __author__ = 'Matthias Probst'
 
 with open("README.md", "r") as fh:
