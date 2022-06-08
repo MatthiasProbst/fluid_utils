@@ -1,6 +1,7 @@
 import setuptools
 
-from pivparticledensity._version import __version__
+from fluid_utils._version import __version__
+
 name = 'fluid_utils'
 __version__ = __version__  # version is MAJOR.MINOR.PATCH
 __author__ = 'Matthias Probst'
@@ -16,9 +17,9 @@ setuptools.setup(
     description="Library providing utilities for fluid computations",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url=f"https://github.com/MatthiasProbst/fluid_utils",
+    url="https://github.com/MatthiasProbst/fluid_utils",
     packages=setuptools.find_packages(),
-    package_data={'h5wrapperpy._html': ['style.css']},
+    package_data={},
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
