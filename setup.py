@@ -1,9 +1,26 @@
+import codecs
+import os.path
+
 import setuptools
 
-from fluid_utils._version import __version__
+
+def read(rel_path):
+    here = os.path.abspath(os.path.dirname(__file__))
+    with codecs.open(os.path.join(here, rel_path), 'r') as fp:
+        return fp.read()
+
+
+def get_version(rel_path):
+    for line in read(rel_path).splitlines():
+        if line.startswith('__version__'):
+            delim = '"' if '"' in line else "'"
+            return line.split(delim)[1]
+    else:
+        raise RuntimeError("Unable to find version string.")
+
 
 name = 'fluid_utils'
-__version__ = __version__  # version is MAJOR.MINOR.PATCH
+__version__ = get_version("fluid_utils/_version.py")  # version is MAJOR.MINOR.PATCH
 __author__ = 'Matthias Probst'
 
 with open("README.md", "r") as fh:
@@ -27,6 +44,28 @@ setuptools.setup(
     ],
     python_requires='>=3.7',
     install_requires=[
+        'appdirs',
+        'numpy>=1.19',
+        'h5py>=3.2.0',
+        'h5pyd',
+        'vtk>=8.1.2',
+        'matplotlib',
+        'pandas',
+        'tqdm',
+        'opencv-python',
+        'pco_tools',
+        'psutil',
+        'scipy',
+        'netCDF4',
+        'pyevtk',
+        'psutil',
+        'IPython',
+        'matplotlib',
+        'pytest',
+        'pyyaml',
+        'xarray',
+        'pint_xarray',
+        'temp',
     ],
     cmdclass={},
 )
